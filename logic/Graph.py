@@ -1,4 +1,29 @@
-import random;
+import random
+import networkx
+
+class GraphGen:
+    def __init__(self):
+        pass
+
+    def erdos_renya_gnp(self, n, p, maxdeg, ):
+        arr = {n: [] for n in range(0, n)}
+      
+        for i in range(0, n.len):
+            for j in range(i + 1, n.len):
+                x = random.randint(0, 1)
+                if (x <= p):
+                    arr[i] = [i, j]
+            
+            
+            pass
+        
+             
+            
+    def erdos_renya_gnm(self, m, p):
+        
+        pass
+    
+   
 
 class MyGraph:    
     def __init__(self):
@@ -15,12 +40,10 @@ class MyGraph:
         self.add_node(u)
         self.add_node(v)
         
-        # Додаємо зв'язок в обидва боки, бо граф неорієнтований
         self._adjacency_list[u].add(v)
         self._adjacency_list[v].add(u)
 
     def get_nodes(self):
-        """Повертає список всіх ID вершин у графі."""
         return list(self._adjacency_list.keys())
 
     def get_neighbors(self, node_id):
